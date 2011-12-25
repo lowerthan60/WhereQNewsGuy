@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.whereq.exception.ApplicationException;
-import com.whereq.fetcher.TomorrowGasPrice;
+import com.whereq.fetcher.newsguy.gas.TomorrowGasPrice;
 import com.whereq.newsguy.gas.pojo.GasPrice;
 import com.whereq.newsguy.service.BaseManager;
 
