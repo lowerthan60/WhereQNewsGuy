@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Map;
+import java.util.TimeZone;
 
 import org.apache.commons.lang3.StringUtils;
 
@@ -47,10 +48,20 @@ public class TomorrowGasPrice implements Fetcher<GasPrice> {
 		end = content.indexOf("</div>", begin);
 		String priceStr = content.substring(begin, end);
 		
-		if(!StringUtils.isEmpty(priceStr)){
-			gasPrice.setTomorrowPrice(Double.parseDouble(priceStr.trim()));
+		
+		//The price is for today or tomorrow should depend on the time zone
+		if(Calendar.getInstance(TimeZone.getTimeZone("Canada/Eastern")).get(Calendar.HOUR_OF_DAY) > 17){
+			if(!StringUtils.isEmpty(priceStr)){
+				gasPrice.setTomorrowPrice(Double.parseDouble(priceStr.trim()));
+			}else{
+				gasPrice.setTomorrowPrice(0.0);
+			}
 		}else{
-			gasPrice.setTomorrowPrice(0.0);
+			if(!StringUtils.isEmpty(priceStr)){
+				gasPrice.setTodayPrice(Double.parseDouble(priceStr.trim()));
+			}else{
+				gasPrice.setTodayPrice(0.0);
+			}
 		}
 		
 		//get delta value

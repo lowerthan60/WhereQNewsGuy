@@ -2,10 +2,17 @@ package com.whereq.newsguy.gas.pojo;
 
 import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 import com.whereq.newsguy.BasePojo;
 
+@Entity(name = "gas_price") 
 public class GasPrice extends BasePojo {
 
 	/**
@@ -13,11 +20,35 @@ public class GasPrice extends BasePojo {
 	 */
 	private static final long serialVersionUID = -3014580281551367447L;
 
+	@Id
+	@Column(name = "gas_price_id", nullable = false)
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private long gasPriceId;
+	
+	@Column(name = "record_time")
 	private Date date;
+	
+	@Column(name = "today_price", precision = 2)
 	private double todayPrice;
+	
+	@Column(name = "delta", precision = 2)
 	private double delta;
+	
+	@Column(name = "tomorrow_price", precision = 2)
 	private double tomorrowPrice;
+	
+	@Column(name = "trend")
 	private int trend;
+
+	
+	
+	public long getGasPriceId() {
+		return gasPriceId;
+	}
+
+	public void setGasPriceId(long gasPriceId) {
+		this.gasPriceId = gasPriceId;
+	}
 
 	public Date getDate() {
 		return date;
