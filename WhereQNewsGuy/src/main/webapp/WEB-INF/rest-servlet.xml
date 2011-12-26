@@ -43,19 +43,6 @@
 			</list>
 		</property>
 	</bean>
-	
-	<bean id="jaxbMarshaller" class="org.springframework.oxm.jaxb.Jaxb2Marshaller">
-		<property name="classesToBeBound">
-			<list>
-				<value>dw.spring3.rest.bean.Employee</value>
-				<value>dw.spring3.rest.bean.EmployeeList</value>
-			</list>
-		</property>
-	</bean>
-
-	<bean id="employees" class="org.springframework.web.servlet.view.xml.MarshallingView">
-		<constructor-arg ref="jaxbMarshaller" />
-	</bean>
 
 	<bean class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
 		<property name="mediaTypes">
@@ -77,12 +64,6 @@
 	</bean>
 	
 	<!--bean id="viewResolver" class="org.springframework.web.servlet.view.BeanNameViewResolver" /-->
-
-	<bean id="employeeController" class="dw.spring3.rest.controller.EmployeeController">
-		<property name="employeeDS" ref="employeeDS" />
-		<property name="jaxb2Mashaller" ref="jaxbMarshaller" />
-	</bean>
-	
 	<bean id="gasPriceController" class="com.whereq.newsguy.rest.controller.GasPriceController">
 		<property name="gasPriceManager" ref="gasPriceManager" />
 	</bean>

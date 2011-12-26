@@ -7,6 +7,5 @@
 		http://www.springframework.org/schema/util
 		http://www.springframework.org/schema/util/spring-util-3.0.xsd">
 
-	<bean id="employeeDS" class="dw.spring3.rest.ds.EmployeeDS" />
 	<bean id="gasPriceManager" class="com.whereq.newsguy.gas.service.GasPriceManager"/>
 </beans>
