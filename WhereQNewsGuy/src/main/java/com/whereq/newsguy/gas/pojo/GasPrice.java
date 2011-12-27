@@ -12,8 +12,8 @@ import javax.persistence.ManyToOne;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-import com.whereq.common.pojo.City;
 import com.whereq.newsguy.BasePojo;
+import com.whereq.pojo.City;
 
 @Entity(name = "gas_price")
 public class GasPrice extends BasePojo {

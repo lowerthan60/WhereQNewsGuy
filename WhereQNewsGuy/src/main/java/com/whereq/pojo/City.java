@@ -1,4 +1,4 @@
-package com.whereq.common.pojo;
+package com.whereq.pojo;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
