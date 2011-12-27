@@ -20,6 +20,9 @@
 		<property name="current_session_context_class">thread</property>
 
 		<!-- Mapping files will go here.... -->
+		<mapping class="com.whereq.common.pojo.Country" />
+		<mapping class="com.whereq.common.pojo.City" />
+		
 		<mapping class="com.whereq.newsguy.gas.pojo.GasPrice" />
 	</session-factory>
 </hibernate-configuration>

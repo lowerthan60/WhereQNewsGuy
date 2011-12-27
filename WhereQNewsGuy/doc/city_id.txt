@@ -1,0 +1,65 @@
+81=Ajax
+91=Aurora
+243=Barrie
+94=Bolton
+
+77=Bowmanville
+97=Brampton
+135=Brantford
+103=Burlington
+95=Caledon
+119=Calgary
+
+105=Cambridge
+74=Cobourg
+88=Collingwood
+78=Courtice
+120=Edmonton
+111=Etobicoke
+
+104=Guelph
+115=Hamilton
+121=Kamloops
+87=Kanata
+122=Kelowna
+106=Kitchener
+
+116=London
+134=Markham
+100=Milton
+101=Mississauga
+244=Montreal
+76=Newcastle
+
+90=Newmarket
+302=Niagara Falls
+102=Oakville
+96=Orangeville
+89=Orillia
+79=Oshawa
+
+86=Ottawa
+85=Peterborough
+82=Pickering
+75=Port Hope
+84=Port Perry
+92=Richmond Hill
+
+305=Sarnia
+118=Saskatoon
+306=Sault Ste Marie
+114=St. Catherines
+109=Stoney Creek
+303=Stratford
+
+307=Sudbury - North Bay
+99=Thunder Bay
+133=Toronto
+83=Uxbridge
+123=Vancouver
+93=Vaughan
+
+107=Waterloo
+80=Whitby
+304=Windsor
+117=Winnipeg

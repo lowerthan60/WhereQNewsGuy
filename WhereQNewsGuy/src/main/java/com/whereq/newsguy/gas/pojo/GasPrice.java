@@ -7,12 +7,15 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
+import com.whereq.common.pojo.City;
 import com.whereq.newsguy.BasePojo;
 
-@Entity(name = "gas_price") 
+@Entity(name = "gas_price")
 public class GasPrice extends BasePojo {
 
 	/**
@@ -21,35 +24,45 @@ public class GasPrice extends BasePojo {
 	private static final long serialVersionUID = -3014580281551367447L;
 
 	@Id
-	@Column(name = "gas_price_id", nullable = false)
+	@Column(name = "id", nullable = false)
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long gasPriceId;
-	
-	@Column(name = "record_time")
-	private Date date;
+	private Long id;
+
+	@ManyToOne(optional = false)
+	@JoinColumn(name = "city_id", referencedColumnName = "id")
+	private City city;
 	
 	@Column(name = "today_price", precision = 2)
 	private double todayPrice;
-	
+
 	@Column(name = "delta", precision = 2)
 	private double delta;
-	
+
 	@Column(name = "tomorrow_price", precision = 2)
 	private double tomorrowPrice;
-	
+
 	@Column(name = "trend")
 	private int trend;
 
+	@Column(name = "record_time")
+	private Date date;
 	
-	
-	public long getGasPriceId() {
-		return gasPriceId;
+	public Long getId() {
+		return id;
 	}
 
-	public void setGasPriceId(long gasPriceId) {
-		this.gasPriceId = gasPriceId;
+	public void setId(Long id) {
+		this.id = id;
 	}
 
+	public City getCity() {
+		return city;
+	}
+
+	public void setCity(City city) {
+		this.city = city;
+	}
+	
 	public Date getDate() {
 		return date;
 	}
@@ -66,7 +79,6 @@ public class GasPrice extends BasePojo {
 		this.todayPrice = todayPrice;
 	}
 
-	
 	public double getDelta() {
 		return delta;
 	}
@@ -90,11 +102,13 @@ public class GasPrice extends BasePojo {
 	public void setTrend(int trend) {
 		this.trend = trend;
 	}
-	
+
 	@Override
 	public String toString() {
-		return new ToStringBuilder(this).append("date", date).append("todayPrice", todayPrice)
-				.append("delta", delta).append("trend", trend).toString();
+		return new ToStringBuilder(this).append("id", id)
+				.append("date", date).append("todayPrice", todayPrice)
+				.append("delta", delta).append("trend", trend)
+				.append("city", city.getName()).toString();
 	}
 
 }
