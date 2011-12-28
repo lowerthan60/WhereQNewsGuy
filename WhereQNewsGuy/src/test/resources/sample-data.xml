@@ -15,297 +15,394 @@
 			<value>USA</value>
 		</row>
 	</table>
+	<table name="timezone">
+		<column>id</column>
+		<column>timezone_id</column>
+		<row>
+			<value>1</value>
+			<value>Canada/Pacific</value>
+		</row>
+		<row>
+			<value>2</value>
+			<value>Canada/Yukon</value>
+		</row>
+		<row>
+			<value>3</value>
+			<value>Canada/Mountain</value>
+		</row>
+		<row>
+			<value>4</value>
+			<value>Canada/Central</value>
+		</row>
+		<row>
+			<value>5</value>
+			<value>Canada/East-Saskatchewan</value>
+		</row>
+		<row>
+			<value>6</value>
+			<value>Canada/Saskatchewan</value>
+		</row>
+		<row>
+			<value>7</value>
+			<value>Canada/Eastern</value>
+		</row>
+		<row>
+			<value>8</value>
+			<value>Canada/Atlantic</value>
+		</row>
+		<row>
+			<value>9</value>
+			<value>Canada/Newfoundland</value>
+		</row>
+	</table>
 	<table name="city">
 		<column>id</column>
 		<column>country_id</column>
+		<column>timezone_id</column>
 		<column>name</column>
 		<row>
 			<value>81</value>
 			<value>1</value>
+			<value>7</value>
 			<value>Ajax</value>
 		</row>
 		<row>
 			<value>91</value>
 			<value>1</value>
+			<value>7</value>
 			<value>Aurora</value>
 		</row>
 		<row>
 			<value>243</value>
 			<value>1</value>
+			<value>7</value>
 			<value>Barrie</value>
 		</row>
 		<row>
 			<value>94</value>
 			<value>1</value>
+			<value>7</value>
 			<value>Bolton</value>
 		</row>
 
 		<row>
 			<value>77</value>
 			<value>1</value>
+			<value>7</value>
 			<value>Bowmanville</value>
 		</row>
 		<row>
 			<value>97</value>
 			<value>1</value>
+			<value>7</value>
 			<value>Brampton</value>
 		</row>
 		<row>
 			<value>135</value>
 			<value>1</value>
+			<value>7</value>
 			<value>Brantford</value>
 		</row>
 		<row>
 			<value>103</value>
 			<value>1</value>
+			<value>7</value>
 			<value>Burlington</value>
 		</row>
 		<row>
 			<value>95</value>
 			<value>1</value>
+			<value>7</value>
 			<value>Caledon</value>
 		</row>
 		<row>
 			<value>119</value>
 			<value>1</value>
+			<value>3</value>
 			<value>Calgary</value>
 		</row>
 
 		<row>
 			<value>105</value>
 			<value>1</value>
+			<value>7</value>
 			<value>Cambridge</value>
 		</row>
 		<row>
 			<value>74</value>
 			<value>1</value>
+			<value>7</value>
 			<value>Cobourg</value>
 		</row>
 		<row>
 			<value>88</value>
 			<value>1</value>
+			<value>7</value>
 			<value>Collingwood</value>
 		</row>
 		<row>
 			<value>78</value>
 			<value>1</value>
+			<value>7</value>
 			<value>Courtice</value>
 		</row>
 		<row>
 			<value>120</value>
 			<value>1</value>
+			<value>3</value>
 			<value>Edmonton</value>
 		</row>
 		<row>
 			<value>111</value>
 			<value>1</value>
+			<value>7</value>
 			<value>Etobicoke</value>
 		</row>
 
 		<row>
 			<value>104</value>
 			<value>1</value>
+			<value>7</value>
 			<value>Guelph</value>
 		</row>
 		<row>
 			<value>115</value>
 			<value>1</value>
+			<value>7</value>
 			<value>Hamilton</value>
 		</row>
 		<row>
 			<value>121</value>
+			<value>1</value>
 			<value>1</value>
 			<value>Kamloops</value>
 		</row>
 		<row>
 			<value>87</value>
 			<value>1</value>
+			<value>7</value>
 			<value>Kanata</value>
 		</row>
 		<row>
 			<value>122</value>
+			<value>1</value>
 			<value>1</value>
 			<value>Kelowna</value>
 		</row>
 		<row>
 			<value>106</value>
 			<value>1</value>
+			<value>7</value>
 			<value>Kitchener</value>
 		</row>
 
 		<row>
 			<value>116</value>
 			<value>1</value>
+			<value>7</value>
 			<value>London</value>
 		</row>
 		<row>
 			<value>134</value>
 			<value>1</value>
+			<value>7</value>
 			<value>Markham</value>
 		</row>
 		<row>
 			<value>100</value>
 			<value>1</value>
+			<value>7</value>
 			<value>Milton</value>
 		</row>
 		<row>
 			<value>101</value>
 			<value>1</value>
+			<value>7</value>
 			<value>Mississauga</value>
 		</row>
 		<row>
 			<value>244</value>
 			<value>1</value>
+			<value>7</value>
 			<value>Montreal</value>
 		</row>
 		<row>
 			<value>76</value>
 			<value>1</value>
+			<value>8</value>
 			<value>Newcastle</value>
 		</row>
 
 		<row>
 			<value>90</value>
 			<value>1</value>
+			<value>7</value>
 			<value>Newmarket</value>
 		</row>
 		<row>
 			<value>302</value>
 			<value>1</value>
+			<value>7</value>
 			<value>Niagara Falls</value>
 		</row>
 		<row>
 			<value>102</value>
 			<value>1</value>
+			<value>7</value>
 			<value>Oakville</value>
 		</row>
 		<row>
 			<value>96</value>
 			<value>1</value>
+			<value>7</value>
 			<value>Orangeville</value>
 		</row>
 		<row>
 			<value>89</value>
 			<value>1</value>
+			<value>7</value>
 			<value>Orillia</value>
 		</row>
 		<row>
 			<value>79</value>
 			<value>1</value>
+			<value>7</value>
 			<value>Oshawa</value>
 		</row>
 
 		<row>
 			<value>86</value>
 			<value>1</value>
+			<value>7</value>
 			<value>Ottawa</value>
 		</row>
 		<row>
 			<value>85</value>
 			<value>1</value>
+			<value>7</value>
 			<value>Peterborough</value>
 		</row>
 		<row>
 			<value>82</value>
 			<value>1</value>
+			<value>7</value>
 			<value>Pickering</value>
 		</row>
 		<row>
 			<value>75</value>
 			<value>1</value>
+			<value>7</value>
 			<value>Port Hope</value>
 		</row>
 		<row>
 			<value>84</value>
 			<value>1</value>
+			<value>7</value>
 			<value>Port Perry</value>
 		</row>
 		<row>
 			<value>92</value>
 			<value>1</value>
+			<value>7</value>
 			<value>Richmond Hill</value>
 		</row>
 
 		<row>
 			<value>305</value>
 			<value>1</value>
+			<value>7</value>
 			<value>Sarnia</value>
 		</row>
 		<row>
 			<value>118</value>
 			<value>1</value>
+			<value>4</value>
 			<value>Saskatoon</value>
 		</row>
 		<row>
 			<value>306</value>
 			<value>1</value>
+			<value>7</value>
 			<value>Sault Ste Marie</value>
 		</row>
 		<row>
 			<value>114</value>
 			<value>1</value>
+			<value>7</value>
 			<value>St. Catherines</value>
 		</row>
 		<row>
 			<value>109</value>
 			<value>1</value>
+			<value>7</value>
 			<value>Stoney Creek</value>
 		</row>
 		<row>
 			<value>303</value>
 			<value>1</value>
+			<value>7</value>
 			<value>Stratford</value>
 		</row>
 
 		<row>
 			<value>307</value>
 			<value>1</value>
+			<value>7</value>
 			<value>Sudbury - North Bay</value>
 		</row>
 		<row>
 			<value>99</value>
 			<value>1</value>
+			<value>7</value>
 			<value>Thunder Bay</value>
 		</row>
 		<row>
 			<value>133</value>
 			<value>1</value>
+			<value>7</value>
 			<value>Toronto</value>
 		</row>
 		<row>
 			<value>83</value>
 			<value>1</value>
+			<value>7</value>
 			<value>Uxbridge</value>
 		</row>
 		<row>
 			<value>123</value>
+			<value>1</value>
 			<value>1</value>
 			<value>Vancouver</value>
 		</row>
 		<row>
 			<value>93</value>
 			<value>1</value>
+			<value>7</value>
 			<value>Vaughan</value>
 		</row>
 
 		<row>
 			<value>107</value>
 			<value>1</value>
+			<value>7</value>
 			<value>Waterloo</value>
 		</row>
 		<row>
 			<value>80</value>
 			<value>1</value>
+			<value>7</value>
 			<value>Whitby</value>
 		</row>
 		<row>
 			<value>304</value>
 			<value>1</value>
+			<value>7</value>
 			<value>Windsor</value>
 		</row>
 		<row>
 			<value>117</value>
 			<value>1</value>
+			<value>4</value>
 			<value>Winnipeg</value>
 		</row>
 	</table>

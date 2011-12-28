@@ -19,12 +19,4 @@ public class StringUtilsTest {
 		System.out.println(StringUtils.trim(str));
 		
 	}
-	
-	@Test 
-	public void timezoneTest(){
-		TimeZone tz = TimeZone.getDefault();
-		
-		System.out.println(tz.getDisplayName());
-	}
-
 }

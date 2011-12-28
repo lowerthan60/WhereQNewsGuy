@@ -23,6 +23,10 @@ public class City {
 	@ManyToOne(optional = false)
 	@JoinColumn(name = "country_id", referencedColumnName = "id")
 	private Country country;
+	
+	@ManyToOne(optional = false)
+	@JoinColumn(name = "timezone_id", referencedColumnName = "id")
+	private TimeZone timezone;
 
 	@Column(name = "name", length = 128, nullable = false)
 	private String name;
@@ -42,6 +46,14 @@ public class City {
 	public void setCountry(Country country) {
 		this.country = country;
 	}
+	
+	public TimeZone getTimezone() {
+		return timezone;
+	}
+
+	public void setTimezone(TimeZone timezone) {
+		this.timezone = timezone;
+	}
 
 	public String getName() {
 		return name;
@@ -54,7 +66,7 @@ public class City {
 	@Override
 	public String toString() {
 		return new ToStringBuilder(this).append("id", id).append("name", name)
-				.append("country", country.getName()).toString();
+				.append("country", country.getName()).append("timezone", timezone.getTimezoneId()).toString();
 	}
 
 }

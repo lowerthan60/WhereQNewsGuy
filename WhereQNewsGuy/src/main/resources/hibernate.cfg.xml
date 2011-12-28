@@ -22,6 +22,7 @@
 		<!-- Mapping files will go here.... -->
 		<mapping class="com.whereq.address.pojo.Country" />
 		<mapping class="com.whereq.address.pojo.City" />
+		<mapping class="com.whereq.address.pojo.TimeZone" />
 		
 		<mapping class="com.whereq.newsguy.gas.pojo.GasPrice" />
 	</session-factory>
