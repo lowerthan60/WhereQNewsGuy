@@ -1,4 +1,4 @@
-package com.whereq.pojo;
+package com.whereq.address.pojo;
 
 import java.util.Set;
 

@@ -9,27 +9,32 @@
 
 	<context:component-scan base-package="dw.spring3.rest.controller" />
 	<!-- To enable @RequestMapping process on type level and method level -->
-	<bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping" />
-	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+	<bean
+		class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping" />
+	<bean
+		class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
 		<property name="messageConverters">
 			<list>
 				<ref bean="marshallingConverter" />
-				<ref bean="atomConverter"  />
+				<ref bean="atomConverter" />
 				<ref bean="jsonConverter" />
 			</list>
 		</property>
 	</bean>
 
-	<bean id="marshallingConverter" class="org.springframework.http.converter.xml.MarshallingHttpMessageConverter">
-    	<constructor-arg ref="jaxbMarshaller" />
-    	<property name="supportedMediaTypes" value="application/xml"/>
+	<bean id="marshallingConverter"
+		class="org.springframework.http.converter.xml.MarshallingHttpMessageConverter">
+		<constructor-arg ref="jaxbMarshaller" />
+		<property name="supportedMediaTypes" value="application/xml" />
 	</bean>
 
-	<bean id="atomConverter" class="org.springframework.http.converter.feed.AtomFeedHttpMessageConverter">
+	<bean id="atomConverter"
+		class="org.springframework.http.converter.feed.AtomFeedHttpMessageConverter">
 		<property name="supportedMediaTypes" value="application/atom+xml" />
 	</bean>
 
-	<bean id="jsonConverter" class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter">
+	<bean id="jsonConverter"
+		class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter">
 		<property name="supportedMediaTypes" value="application/json" />
 	</bean>
 
@@ -38,32 +43,34 @@
 		<property name="messageConverters">
 			<list>
 				<ref bean="marshallingConverter" />
-				<ref bean="atomConverter"  />
+				<ref bean="atomConverter" />
 				<ref bean="jsonConverter" />
 			</list>
 		</property>
 	</bean>
 
-	<bean class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
+	<bean
+		class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
 		<property name="mediaTypes">
-		    <map>
-		        <entry key="xml" value="application/xml"/>
-		        <entry key="html" value="text/html"/>
-		    </map>
+			<map>
+				<entry key="xml" value="application/xml" />
+				<entry key="html" value="text/html" />
+			</map>
 		</property>
 		<property name="viewResolvers">
-		    <list>
-		        <bean class="org.springframework.web.servlet.view.BeanNameViewResolver"/>
-		        <bean id="viewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver">
-					<property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
-					<property name="prefix" value="/WEB-INF/jsp/"/>
-					<property name="suffix" value=".jsp"/>
+			<list>
+				<bean class="org.springframework.web.servlet.view.BeanNameViewResolver" />
+				<bean id="viewResolver"
+					class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+					<property name="viewClass"
+						value="org.springframework.web.servlet.view.JstlView" />
+					<property name="prefix" value="/WEB-INF/jsp/" />
+					<property name="suffix" value=".jsp" />
 				</bean>
-		    </list>
+			</list>
 		</property>
 	</bean>
-	
-	<!--bean id="viewResolver" class="org.springframework.web.servlet.view.BeanNameViewResolver" /-->
+
 	<bean id="gasPriceController" class="com.whereq.newsguy.rest.controller.GasPriceController">
 		<property name="gasPriceManager" ref="gasPriceManager" />
 	</bean>
