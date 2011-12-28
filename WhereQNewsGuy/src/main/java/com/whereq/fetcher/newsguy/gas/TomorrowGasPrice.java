@@ -3,11 +3,13 @@ package com.whereq.fetcher.newsguy.gas;
 import java.io.IOException;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.Map;
 import java.util.TimeZone;
 
 import org.apache.commons.lang3.StringUtils;
 
+import com.whereq.address.pojo.City;
 import com.whereq.component.httpclient.HttpClientHelper;
 import com.whereq.exception.ApplicationException;
 import com.whereq.fetcher.Fetcher;
@@ -30,6 +32,9 @@ public class TomorrowGasPrice implements Fetcher<GasPrice> {
 	
 	@Override
 	public GasPrice fetch(String url, Map<String, String> parameters) throws ApplicationException{
+		System.out.println("url=" + url);
+		String cityIdStr = parameters.get("cityId");
+		
 		String content = null;		
 		try {
 			content = HttpClientHelper.post(url, parameters);
@@ -37,8 +42,12 @@ public class TomorrowGasPrice implements Fetcher<GasPrice> {
 			throw new ApplicationException(e);
 		}
 		
+		City city = new City();
+		city.setId(Long.parseLong(cityIdStr));
 		Date today = new Date();
 		GasPrice gasPrice = new GasPrice();
+		gasPrice.setCity(city);
+		
 		gasPrice.setDate(today);
 		int begin = 0;
 		int end = 0;

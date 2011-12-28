@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.whereq.exception.ApplicationException;
 import com.whereq.newsguy.gas.pojo.GasPrice;
 import com.whereq.newsguy.gas.service.GasPriceManager;
 
@@ -22,7 +23,15 @@ public class GasPriceController {
 	@RequestMapping(method = RequestMethod.GET, value = "/gasprice/{id}", headers = "Accept=application/xml, application/json")
 	public @ResponseBody
 	GasPrice getGasPrice(@PathVariable String id) {
-		GasPrice gasPrice = gasPriceManager.getGasPrice(id);
+		GasPrice gasPrice = null;
+		
+		try {
+			gasPriceManager.fetchAllGasPrice();
+			gasPrice = gasPriceManager.getGasPrice(id);
+		} catch (ApplicationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return gasPrice;
 	}
 

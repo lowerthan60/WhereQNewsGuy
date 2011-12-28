@@ -108,7 +108,7 @@ public class GasPrice extends BasePojo {
 		return new ToStringBuilder(this).append("id", id)
 				.append("date", date).append("todayPrice", todayPrice)
 				.append("delta", delta).append("trend", trend)
-				.append("city", city.getName()).toString();
+				.append("city", city.getId()).toString();
 	}
 
 }

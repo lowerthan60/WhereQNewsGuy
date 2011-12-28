@@ -1,38 +1,59 @@
 package com.whereq.newsguy.gas.service;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
+import com.whereq.address.dao.CityDAO;
+import com.whereq.address.pojo.City;
 import com.whereq.exception.ApplicationException;
 import com.whereq.fetcher.newsguy.gas.TomorrowGasPrice;
-import com.whereq.newsguy.dao.GasPriceDAO;
+import com.whereq.newsguy.gas.dao.GasPriceDAO;
 import com.whereq.newsguy.gas.pojo.GasPrice;
 import com.whereq.newsguy.service.BaseManager;
 
 public class GasPriceManager extends BaseManager {
 
+	private static String GAS_PRICE_URL = "http://tomorrowsgaspricetoday.com/gas-prices.html";
+
+	private CityDAO cityDAO;
 	private GasPriceDAO gasPriceDAO;
+
 	private TomorrowGasPrice tomorrowGasPrice;
 
-	public GasPrice getGasPrice(String cityId) {
-		String url = "http://tomorrowsgaspricetoday.com/gas-prices.html";
+	public GasPrice getGasPrice(String cityId) throws ApplicationException {
 		Map<String, String> parameters = new HashMap<String, String>();
 		parameters.put("cityId", cityId);
 
 		GasPrice gasPrice = null;
 
-		TomorrowGasPrice tgp = new TomorrowGasPrice();
-		try {
-			gasPrice = tgp.fetch(url, parameters);
-		} catch (ApplicationException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		gasPrice = tomorrowGasPrice.fetch(GAS_PRICE_URL, parameters);
 		return gasPrice;
 	}
-	
-	public void fetchAllPrice(){
-		
+
+	public void fetchAllGasPrice() throws ApplicationException {
+
+		GasPrice gasPrice = null;
+		Map<String, String> parameters = new HashMap<String, String>();
+
+		System.out.println("bacon_test 1");
+		List<City> cities = cityDAO.getCities();
+		System.out.println("bacon_test 2");
+		for (City city : cities) {
+			System.out.println(city);
+			parameters.put("cityId", Long.toString(city.getId()));
+			gasPrice = tomorrowGasPrice.fetch(GAS_PRICE_URL, parameters);
+
+			System.out.println(gasPrice);
+		}
+	}
+
+	public CityDAO getCityDAO() {
+		return cityDAO;
+	}
+
+	public void setCityDAO(CityDAO cityDAO) {
+		this.cityDAO = cityDAO;
 	}
 
 	public GasPriceDAO getGasPriceDAO() {
@@ -50,6 +71,5 @@ public class GasPriceManager extends BaseManager {
 	public void setTomorrowGasPrice(TomorrowGasPrice tomorrowGasPrice) {
 		this.tomorrowGasPrice = tomorrowGasPrice;
 	}
-	
-	
+
 }

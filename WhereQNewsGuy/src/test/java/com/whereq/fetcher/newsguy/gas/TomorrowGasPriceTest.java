@@ -26,7 +26,7 @@ public class TomorrowGasPriceTest extends TestCase{
 	public void testPost() {
 		String url = "http://tomorrowsgaspricetoday.com/gas-prices.html";
 		Map<String, String> parameters = new HashMap<String, String>();
-		parameters.put("cityId", "101");
+		parameters.put("cityId", "81");
 
 		GasPrice gasPrice = null;
 
