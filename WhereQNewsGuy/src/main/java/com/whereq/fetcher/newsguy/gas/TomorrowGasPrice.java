@@ -25,7 +25,7 @@ public class TomorrowGasPrice implements Fetcher<GasPrice> {
 	final static String ARROW_IMAGE_SRC = "src=\"";
 	
 	final static String UP_SM = "gas_arrow_up.gif";
-	final static String DROP_SM = "";
+	final static String DOWN_SM = "gas_arrow_down.gif";
 	final static String NO_CHANGE_SM = "no-change-sm.gif";
 	
 	
@@ -93,7 +93,7 @@ public class TomorrowGasPrice implements Fetcher<GasPrice> {
 			gasPrice.setTrend(Trend.CHANGELESS);
 		}else if(trend.equals(UP_SM)){
 			gasPrice.setTrend(Trend.UP);
-		}else if(trend.equals(DROP_SM)){
+		}else if(trend.equals(DOWN_SM)){
 			gasPrice.setTrend(Trend.DROP);
 		}
 		
