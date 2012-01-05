@@ -10,7 +10,7 @@ import com.whereq.exception.ApplicationException;
 import com.whereq.fetcher.newsguy.gas.TomorrowGasPrice;
 import com.whereq.newsguy.gas.dao.GasPriceDAO;
 import com.whereq.newsguy.gas.pojo.GasPrice;
-import com.whereq.newsguy.service.BaseManager;
+import com.whereq.service.BaseManager;
 
 public class GasPriceManager extends BaseManager {
 
@@ -36,15 +36,10 @@ public class GasPriceManager extends BaseManager {
 		GasPrice gasPrice = null;
 		Map<String, String> parameters = new HashMap<String, String>();
 
-		System.out.println("bacon_test 1");
 		List<City> cities = cityDAO.getCities();
-		System.out.println("bacon_test 2");
 		for (City city : cities) {
-			System.out.println(city);
 			parameters.put("cityId", Long.toString(city.getId()));
 			gasPrice = tomorrowGasPrice.fetch(GAS_PRICE_URL, parameters);
-
-			System.out.println(gasPrice);
 		}
 	}
 
